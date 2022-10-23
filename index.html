@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blogin</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    
+    <body class="main-layout" onload="changeSelectedLinkColor()">
+        <div class="mobile-menu-bgc hidden"></div>
+    <header class="main-header main-layout full">
+      <div class="header flex align-center">
+        <div class="logo">Blogin<span class="title-logo">.</span></div>
+        <nav class="main-nav hidden">
+          <ul class="clear-list flex align-center justify-center">
+            <li><a href="index.html">Journal</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="menu-btn" onclick="openMobileMenu(this)">☰</button>
+      </div>
+    </header>
+    <main class="main-content">
+      <div class="card card-layout">
+        <div class="card-img-container">
+          <img src="images/001.jpg" alt="" class="card-img" />
+        </div>
+        <div class="card-text-area flex direction-column">
+          <h2 class="card-title">Duis aute irure dolor in henderit in voluptate.</h2>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia
+            deserunt mollit anim id est laborum.
+          </p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+          <button class="btn-round btn-arrow" type="button">Continue Reading</button>
+        </div>
+      </div>
+      <div class="card card-layout">
+        <div class="card-img-container">
+          <img src="images/002.jpg" alt="" class="card-img" />
+        </div>
+        <div class="card-text-area flex direction-column">
+          <h2 class="card-title">Duis aute irure dolor in henderit in voluptate.</h2>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia
+            deserunt mollit anim id est laborum.
+          </p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+          <button class="btn-round btn-arrow" type="button">Continue Reading</button>
+        </div>
+      </div>
+      <div class="card card-layout">
+        <div class="card-img-container">
+          <img src="images/003.jpg" alt="" class="card-img" />
+        </div>
+        <div class="card-text-area flex direction-column">
+          <h2 class="card-title">Duis aute irure dolor in henderit in voluptate.</h2>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia
+            deserunt mollit anim id est laborum.
+          </p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+          <button class="btn-round btn-arrow" type="button">Continue Reading</button>
+        </div>
+      </div>
+      <div class="paging-nav flex space-between">
+        <button class="paging-btn prev">Previous</button>
+        <button class="paging-btn next">Next</button>
+      </div>
+    </main>
+    <footer class="main-footer full flex direction-column align-center">
+      <div class="footer-logo">Blogin<span class="title-logo">.</span></div>
+      <small class="footer-rights">© 2014 Blogin.com - All Rights Reserved - Find more free Templates at <strong>Pixelhint.com</strong></small>
+      <ul class="social-links clear-list flex">
+        <li>
+          <a class="fa facebook" href="#"></a>
+        </li>
+        <li>
+          <a class="fa twitter" href="#"></a>
+        </li>
+        <li>
+          <a class="fa behance" href="#"></a>
+        </li>
+        <li>
+          <a class="fa dribbble" href="#"></a>
+        </li>
+      </ul>
+    </footer>
+
+    <script>
+      function openMobileMenu(el) {
+       if (el.innerText === '☰') el.innerText = 'X' 
+       else el.innerText = '☰' 
+
+        document.querySelector('.main-nav').classList.toggle('hidden')
+        document.querySelector('.mobile-menu-bgc').classList.toggle('hidden')
+      }
+      function changeSelectedLinkColor() {
+        const selector = document.querySelector('selected')
+        if (selector) selector.classList.remove('selected')
+        const elA = [...document.querySelectorAll('.main-nav a')]
+        elA.forEach((el) => {
+          if (window.location.href === el.href) {
+            el.classList.add('selected')
+          }
+        })
+      }
+    </script>
+  </body>
+</html>
